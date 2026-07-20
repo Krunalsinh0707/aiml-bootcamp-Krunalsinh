@@ -2,8 +2,8 @@ def class_average(students, passing=40):
     total = 0
     passed = 0
     for s in students:
-        total += s["marks"]
-        if s["marks"] >= passing:
+        total += s["marks"]    # Here is the first issue 
+        if s["marks"] >= passing:  # Here is the second issue
             passed += 1
         
 

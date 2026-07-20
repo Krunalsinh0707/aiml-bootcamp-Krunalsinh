@@ -14,4 +14,4 @@ with open("big.txt") as f:
 
 print(count)
 print(counts)
-print(content)    
+# print(content)    
