@@ -1,7 +1,6 @@
 import re
 from collections import Counter, defaultdict
 from datetime import datetime
-import re
 
 level_counts = Counter()
 hour_counts = Counter()
@@ -9,9 +8,7 @@ error_messages = Counter()
 log_by_level = defaultdict(list)
 
 
-pattern = r'^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(INFO|WARN|ERROR)\s+(.*)$'
-
-
+pattern = r"^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(INFO|WARN|ERROR)\s+(.*)$"
 
 
 with open("sample_application.log", "r") as file:
@@ -29,14 +26,14 @@ with open("sample_application.log", "r") as file:
             print(f"Message: {message}")
             print("-" * 40)
         if level == "ERROR":
-           error_messages[message] += 1
+            error_messages[message] += 1
 
 for level, entries in log_by_level.items():
     print(f"\n{level}:")
     for timestamp, message in entries:
         print(timestamp, "-", message)
 
-        
+
 busiest_hour, count = hour_counts.most_common(1)[0]
 most_common_error, count = error_messages.most_common(1)[0]
 

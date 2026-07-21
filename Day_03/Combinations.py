@@ -1,22 +1,22 @@
-from itertools import combinations, permutations, product, chain, groupby
+from itertools import combinations, permutations, product, chain
+
 students = ["Krunal", "Rahul", "Asha", "Meera", "Ravi"]
 
-pairs=list(combinations(students,2))
+pairs = list(combinations(students, 2))
 print(len(pairs))
 print(pairs)
 
-per_pairs=list(permutations(students,2))
+per_pairs = list(permutations(students, 2))
 print(len(per_pairs))
 print(per_pairs)
 
 
-shirt_color=["white","black","maroon"]
-shirt_size=["M","XL"]
+shirt_color = ["white", "black", "maroon"]
+shirt_size = ["M", "XL"]
 
-shirt_pairs=list(product(shirt_color,shirt_size))
+shirt_pairs = list(product(shirt_color, shirt_size))
 
 print(shirt_pairs)
-
 
 
 # Example for the chain
@@ -37,8 +37,9 @@ print(shirt_pairs)
 
 features = ["Age", "Salary", "Experience", "Education"]
 
-powerset = chain.from_iterable(combinations (features, r) for r in range(len(features) + 1))
+powerset = chain.from_iterable(
+    combinations(features, r) for r in range(len(features) + 1)
+)
 
 for subset in powerset:
     print(subset)
-    
