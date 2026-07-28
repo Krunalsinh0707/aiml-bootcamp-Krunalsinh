@@ -1,5 +1,6 @@
-import numpy as np 
+import numpy as np
 import matplotlib.pyplot as plt
+
 
 def make_line(n, slope, intercept, noise, seed=0):
     rng = np.random.default_rng(seed)
@@ -33,18 +34,21 @@ for noise in noise_levels:
 
 rng = np.random.default_rng(42)
 
+
 def make_clusters(n, centres, spread):
-        points = []
+    points = []
 
-        for centre in centres:
-            cluster = rng.normal(
-                loc=centre,
-                scale=spread,
-                size=(n, 2),
-            )
-            points.append(cluster)
+    for centre in centres:
+        cluster = rng.normal(
+            loc=centre,
+            scale=spread,
+            size=(n, 2),
+        )
+        points.append(cluster)
 
-        return points
+    return points
+
+
 overlap = make_clusters(
     n=100,
     centres=[

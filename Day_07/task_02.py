@@ -1,22 +1,18 @@
-import numpy as np 
+import numpy as np
 import timeit
 
-A = np.array([[2., 3., -1.],
-             [4., -1., 2.],
-             [-1., 2., 3.]])
-b = np.array([5., 6., 7.])
+A = np.array([[2.0, 3.0, -1.0], [4.0, -1.0, 2.0], [-1.0, 2.0, 3.0]])
+b = np.array([5.0, 6.0, 7.0])
 
 
-x = np.linalg.solve(A,b)
-print (x)
-print(np.allclose(A @ x, b)) #uses np.allclose because float numbering
+x = np.linalg.solve(A, b)
+print(x)
+print(np.allclose(A @ x, b))  # uses np.allclose because float numbering
 
-y = (np.linalg.inv(A) @ b)
-print (y)
+y = np.linalg.inv(A) @ b
+print(y)
 
-print(np.allclose(x , y) )
-
-
+print(np.allclose(x, y))
 
 
 setup = "import numpy as np; A = np.random.rand(500, 500); b = np.random.rand(500)"
@@ -29,8 +25,7 @@ print(f"np.linalg.inv(A) @ b : {t_inv*1000:6.2f} ms")
 print(f"\nsolve is about {t_inv/t_solve:.1f}x faster")
 
 
-singular = np.array([[1., 2.],
-                     [2., 4.]])      # row 2 = 2 x row 1
+singular = np.array([[1.0, 2.0], [2.0, 4.0]])  # row 2 = 2 x row 1
 
 print("determinant:", np.linalg.det(singular))
 
@@ -39,8 +34,6 @@ try:
 except np.linalg.LinAlgError as e:
     print("LinAlgError:", e)
 
-
-    #solve preffer above inv because it takes less time than inv 
-    #det it means as the the matrix given is a singular matrix
-    # linear dependence 
-     
+    # solve preffer above inv because it takes less time than inv
+    # det it means as the the matrix given is a singular matrix
+    # linear dependence

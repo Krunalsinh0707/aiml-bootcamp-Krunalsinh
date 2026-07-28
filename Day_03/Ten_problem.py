@@ -1,112 +1,112 @@
-numbers=[1,2,3,4,5]
+numbers = [1, 2, 3, 4, 5]
 
-sq=[]
+sq = []
 
 for n in numbers:
-    if n%2==1:
-        sq.append(n*n)
+    if n % 2 == 1:
+        sq.append(n * n)
 
-        
-print ("Loop Squere",sq)
 
-Com_sq=[n*n for n in numbers if n%2==1]
+print("Loop Squere", sq)
 
-print("Comprehension Squere",Com_sq)
+Com_sq = [n * n for n in numbers if n % 2 == 1]
 
-#2
+print("Comprehension Squere", Com_sq)
 
-names=["krunal" ,  "Yuvi" ,  "deepak" , "Harshil" ]
+# 2
 
-uppercase_name=[]
+names = ["krunal", "Yuvi", "deepak", "Harshil"]
+
+uppercase_name = []
 
 for n in names:
-    cleaned=n.strip().upper()
+    cleaned = n.strip().upper()
     uppercase_name.append(cleaned)
-print("Looped_uppercase-names",uppercase_name)
+print("Looped_uppercase-names", uppercase_name)
 
-com_name=[n.strip().upper() for n in names]
+com_name = [n.strip().upper() for n in names]
 
-print ("Comprehension Name" , com_name)
+print("Comprehension Name", com_name)
 
 
-#3
+# 3
 
-list_01=[1,2,3,4,5]
-list_02=[10,20,30,40,50]
+list_01 = [1, 2, 3, 4, 5]
+list_02 = [10, 20, 30, 40, 50]
 
-product=[]
+product = []
 
-for n1,n2 in zip(list_01,list_02):
-    product.append(n1*n2)
+for n1, n2 in zip(list_01, list_02):
+    product.append(n1 * n2)
 
-print("Looped product:" , product)
+print("Looped product:", product)
 
-comp_product=[n1*n2 for n1,n2 in zip(list_01,list_02)]
+comp_product = [n1 * n2 for n1, n2 in zip(list_01, list_02)]
 
-print("Comprewhension Product:",comp_product)
+print("Comprewhension Product:", comp_product)
 
-#4
+# 4
 
 words = ["apple", "banana", "mango", "orange", "grapes"]
 
-long_word=[]
+long_word = []
 
 for word in words:
-    if len(word)>4:
+    if len(word) > 4:
         long_word.append(word)
 
-comp_long_word=[word for word in words if len(word)>4]
+comp_long_word = [word for word in words if len(word) > 4]
 
-print ("loop long Word:",long_word) 
-print ("comp long Word:",comp_long_word) 
+print("loop long Word:", long_word)
+print("comp long Word:", comp_long_word)
 
-#5
+# 5
 from functools import reduce
 
-list=[10,20,30,40,50]
+list = [10, 20, 30, 40, 50]
 
-product2=1
+product2 = 1
 
 for n in list:
-    product2*=n
+    product2 *= n
 print(product2)
 
-product1=reduce(lambda x ,y : x * y ,list)
+product1 = reduce(lambda x, y: x * y, list)
 
 print(product1)
-    
-#6
+
+# 6
 
 items = [
     {"name": "apple", "price": 10},
     {"name": "banana", "price": 5},
-    {"name": "mango", "price": 20}
+    {"name": "mango", "price": 20},
 ]
 
-total_price=0
+total_price = 0
 
 for item in items:
-    total_price=total_price + item["price"]
-print("loop :",total_price)
+    total_price = total_price + item["price"]
+print("loop :", total_price)
 
-total_prices=reduce(lambda total , item : total +item["price"],items,0)
+total_prices = reduce(lambda total, item: total + item["price"], items, 0)
 
-print("reduce:",total_prices)
+print("reduce:", total_prices)
 
-#7
+# 7
 
-nested_list=[[1,2],[3,4],[5]]
+nested_list = [[1, 2], [3, 4], [5]]
 
-flatten_list=[]
+flatten_list = []
 for sublist in nested_list:
-        for num in sublist:
-            flatten_list.append(num)
+    for num in sublist:
+        flatten_list.append(num)
 print(flatten_list)
 
-flatten_list_02=reduce(lambda x, y : x+y, nested_list )
+flatten_list_02 = reduce(lambda x, y: x + y, nested_list)
 print(flatten_list_02)
 
-#8
+# 8
 
 words = ["apple", "banana", "mango", "orange"]
 
@@ -124,7 +124,7 @@ com_length_dict = dict(map(lambda word: (word, len(word)), words))
 print(com_length_dict)
 
 
-#9
+# 9
 
 values = [0, 1, "", "Hello", None, [], [1, 2], False, True]
 
@@ -138,11 +138,11 @@ print(loop_value)
 
 values = [0, 1, "", "Hello", None, [], [1, 2], False, True]
 
-comp_value= [value for value in values if value]
+comp_value = [value for value in values if value]
 
 print(comp_value)
 
-#10
+# 10
 
 numbers = [1, 2, 3]
 
@@ -155,7 +155,8 @@ for num in numbers:
 
 print(loop_running_total)
 
-comp_running_total = reduce(lambda acc, x: acc + [acc[-1] + x] if acc else [x],numbers,[])
+comp_running_total = reduce(
+    lambda acc, x: acc + [acc[-1] + x] if acc else [x], numbers, []
+)
 
 print(comp_running_total)
-

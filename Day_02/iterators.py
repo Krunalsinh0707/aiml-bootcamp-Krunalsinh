@@ -1,4 +1,4 @@
-it=iter([1,2,3,4,5])
+it = iter([1, 2, 3, 4, 5])
 
 while True:
     try:
@@ -6,8 +6,8 @@ while True:
     except StopIteration:
         break
 
-with open("iterator.txt","r") as f:
-    it=iter(f)
+with open("iterator.txt", "r") as f:
+    it = iter(f)
     while True:
         try:
             print(next(it))

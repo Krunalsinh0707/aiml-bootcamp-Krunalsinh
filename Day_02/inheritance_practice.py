@@ -4,15 +4,14 @@ class Person:
 
     def greet(self):
         return "Hello, Welcome To Codetrade."
-    
-    
+
 
 class Student(Person):
     def __init__(self, name, roll):
         super().__init__(name)
         self.roll = roll
         self.marks = []
-    
+
     def greet(self):
         return "Hello Student Welcome to Codetrade."
 
@@ -27,8 +26,10 @@ class Teacher(Person):
 
     def __str__(self):
         return self.greet()
-s1=Student("Krunal",101)
-t1=Teacher("Yuvraj", "Maths")
+
+
+s1 = Student("Krunal", 101)
+t1 = Teacher("Yuvraj", "Maths")
 
 print(s1)
 print(t1)

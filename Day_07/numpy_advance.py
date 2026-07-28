@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy as np
 
 # cube = np.arange(24).reshape(2,3,4)
 
@@ -9,10 +9,7 @@ import numpy as np
 # print("\nsum(axis=(0,1)) ->", cube.sum(axis=(0, 1)).shape, " (collapse two at once)")
 
 
-marks = np.array([[80, 70, 90],
-                  [60, 65, 70],
-                  [95, 88, 92],
-                  [50, 45, 60]])
+marks = np.array([[80, 70, 90], [60, 65, 70], [95, 88, 92], [50, 45, 60]])
 
 # row_means = marks.mean(axis=1)       # shape (4,)
 # print("marks shape:    ", marks.shape)
@@ -24,19 +21,17 @@ marks = np.array([[80, 70, 90],
 #     print("\nValueError:", e)
 
 
-row_means = marks.mean(axis=1, keepdims=True)     # shape (4, 1) not (4,)
+row_means = marks.mean(axis=1, keepdims=True)  # shape (4, 1) not (4,)
 print("with keepdims:", row_means.shape)
 print(row_means)
 
-centred = marks - row_means                        # (4,3) - (4,1) -> works
+centred = marks - row_means  # (4,3) - (4,1) -> works
 print("\nrow-centred marks:")
 print(np.round(centred, 1))
 print("\nrow means now:", np.round(centred.mean(axis=1), 10))
 
 
-
-grid = np.array([[3, 7, 2],
-                 [9, 4, 6]])
+grid = np.array([[3, 7, 2], [9, 4, 6]])
 
 flat = grid.argmax()
 print("grid.argmax() =", flat, " <- index into the FLATTENED array")
@@ -50,11 +45,10 @@ print("\nargmax(axis=0):", grid.argmax(axis=0), " best row per column")
 print("argmax(axis=1):", grid.argmax(axis=1), " best column per row")
 
 
-import numpy as np
-
 # a real one: the sigmoid function, the classic neural network activation
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
+
 
 x = np.array([-4, -2, 0, 2, 4], dtype=float)
 print("x       :", x)

@@ -1,12 +1,16 @@
-def greet(name = "Guest"):
+def greet(name="Guest"):
     return f"Hello {name}!"
 
+
 print(greet("Krunalsinh"))
-a=[]
+a = []
+
 
 def average(a):
-    if len(a)==0:
+    if len(a) == 0:
         return 0
-    
-    return sum(a)/len(a)
+
+    return sum(a) / len(a)
+
+
 print(average(a))

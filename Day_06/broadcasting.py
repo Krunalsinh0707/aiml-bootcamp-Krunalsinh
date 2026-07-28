@@ -1,6 +1,5 @@
 import numpy as np
 
-
 arr_01 = np.ones((3, 4))
 arr_02 = np.array([1, 2, 3, 4])
 arr_03 = np.array([1, 2, 3])

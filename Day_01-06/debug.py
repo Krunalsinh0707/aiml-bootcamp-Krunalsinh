@@ -5,6 +5,7 @@ def add(score, marks=[]):
     marks.append(score)
     return marks
 
+
 print(add(10))
 print(add(20))
 
@@ -22,10 +23,10 @@ def numbers():
     for i in range(5):
         yield i
 
+
 gen = numbers()
 
 print(list(gen))
-
 
 
 a = np.array([[1, 2], [3, 4]])
