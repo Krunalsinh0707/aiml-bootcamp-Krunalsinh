@@ -1,0 +1,6 @@
+Model,CV R²
+Baseline,-0.002
+Plain Linear Regression,0.84
+Ridge,0.84
+Lasso,-0.002
+Final RidgeCV Pipeline,0.84
